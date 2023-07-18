@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css"
+import Dashboard from "./component/Dasboard";
+import Createproduct from "./component/Createproduct";
+import Createuser from "./component/Createuser"
+import Productgrid from "./component/Productgrid"
+import Usergrid from "./component/Usergrid";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+
+function App(){
+  return(
+    <div>
+      <BrowserRouter>
+      <Routes>
+        <Route path="/sidebar" element={<Dashboard/>}/>
+        <Route path="/createproduct" element={<Createproduct/>}/>
+        <Route path="/createuser" element={<Createuser/>}/>
+        <Route path="/productpage" element={<Productgrid/>}/>
+        <Route path="/userpage" element={<Usergrid/>}/>
+      </Routes>
+      </BrowserRouter>
+
     </div>
-  );
+  )
 }
+
 
 export default App;
